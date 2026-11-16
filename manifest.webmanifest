@@ -1,0 +1,42 @@
+{
+  "id": "./",
+  "name": "YucaPass · Pasaporte Digital de Experiencias Turísticas",
+  "short_name": "YucaPass",
+  "description": "Nació en Yucatán. Te lleva más allá. Explora destinos, conecta experiencias y conserva tu pasaporte digital.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "background_color": "#062d46",
+  "theme_color": "#062d46",
+  "orientation": "portrait-primary",
+  "categories": [
+    "travel",
+    "lifestyle"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "./yucapass-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./yucapass-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./brand-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

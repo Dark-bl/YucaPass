@@ -1,0 +1,9 @@
+node_modules/
+android/
+dist/
+.DS_Store
+Thumbs.db
+android/keystore/
+*.jks
+*.keystore
+local.properties

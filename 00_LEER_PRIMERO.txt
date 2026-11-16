@@ -1,0 +1,23 @@
+YUCAPASS 5.0 — PAQUETE GITHUB/APK
+
+Esta entrega está organizada en una carpeta principal con los archivos generales directamente en la raíz para facilitar su carga a GitHub.
+
+Solo se conservan estas carpetas porque el proyecto las necesita:
+- .github/workflows: automatizaciones de GitHub Actions para web y Android.
+- assets: imágenes y recursos Android referenciados por sus rutas.
+- scripts: tareas de preparación y firma Android llamadas desde package.json.
+- tests: prueba complementaria llamada desde package.json.
+
+No muevas ni renombres esos archivos o carpetas: algunas rutas están conectadas con la configuración y los procesos de compilación.
+
+PARA SUBIRLO:
+1. Extrae este ZIP en tu computadora.
+2. Abre la carpeta YucaPass_5.0_GitHub_Profesional.
+3. Si ya tienes un repositorio clonado, copia TODO el contenido de esta carpeta dentro de la carpeta raíz del repositorio y acepta combinar archivos si Windows lo pregunta.
+4. Abre GitHub Desktop, revisa los cambios, escribe un resumen, haz Commit y luego Push.
+5. En GitHub, abre Actions para revisar la generación del APK. El APK no viene compilado dentro de este ZIP: se genera cuando el flujo de Android termina correctamente.
+
+IMPORTANTE:
+- No subas el ZIP como único archivo esperando que GitHub lo ejecute.
+- No publiques contraseñas, tokens privados ni claves secretas de Supabase.
+- La firma de publicación requiere configurar los secretos indicados en la guía correspondiente.

@@ -1,0 +1,36 @@
+YUCAPASS 5.0 PROFESIONAL — PAQUETE PARA GITHUB
+
+ESTE ES EL PROYECTO COMPLETO. NO MEZCLES ARCHIVOS DE OTRAS VERSIONES.
+
+1. Extrae este ZIP en Windows.
+2. Abre la carpeta YucaPass_5.0_GitHub_Profesional.
+3. Entra a esa carpeta. Debes ver index.html, package.json, main.js y la carpeta .github.
+4. En GitHub crea un repositorio nuevo y vacío llamado YucaPass (o el nombre que prefieras).
+5. En el repositorio elige Add file > Upload files.
+6. Selecciona TODO el contenido de esta carpeta, incluida la carpeta oculta .github, y arrástralo a GitHub.
+7. Confirma con Commit changes en la rama main.
+8. Abre Actions. Se ejecutarán dos procesos: publicación web y compilación Android.
+9. Para activar la web: Settings > Pages > Build and deployment > Source: GitHub Actions.
+10. Para descargar el APK: Actions > ejecución Android > Artifacts > YucaPass-5.0-APK-debug.
+
+IMPORTANTE SOBRE SUPABASE
+- La configuración cliente incluida apunta al proyecto Supabase que estaba configurado en el respaldo.
+- No subas claves service_role ni secret. La clave publishable/anon del cliente puede estar en el frontend si RLS está bien configurado.
+- No ejecutes las migraciones históricas automáticamente. Si ya ejecutaste las migraciones de YucaPass 4.3, no vuelvas a ejecutar MIGRACION_V4_3_REGISTRO_HOTELES.sql.
+- Consulta GUIA_SUPABASE_V4_3_REGISTRO_HOTELES.md y verifica el estado real de la base antes de tocar SQL.
+
+PARA GENERAR AAB DE GOOGLE PLAY
+El APK de prueba no requiere firma propia. Para generar el AAB firmado, configura los cuatro GitHub Secrets indicados en GUIA_FIRMA_GOOGLE_PLAY.md:
+ANDROID_KEYSTORE_BASE64
+ANDROID_KEYSTORE_PASSWORD
+ANDROID_KEY_ALIAS
+ANDROID_KEY_PASSWORD
+
+NO SUBAS ESTOS ELEMENTOS
+No subas node_modules, dist, android generado, archivos .env ni llaves privadas. GitHub Actions instala y prepara lo necesario.
+
+VALIDACIÓN REALIZADA ANTES DE ENTREGAR
+- npm run check: 10 grupos de pruebas completados correctamente.
+- npm run build:web: completado; se generó dist con 20 archivos.
+- No se compiló un APK/AAB en este entorno. La compilación Android queda a cargo del workflow de GitHub Actions después de subir el proyecto.
+- No se ejecutó ninguna migración ni operación sobre Supabase remoto.

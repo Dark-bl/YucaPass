@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#062d46">
+  <meta name="description" content="YucaPass: descubre Yucatán, activa tu pasaporte digital, reúne sellos y disfruta experiencias locales.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./brand-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./yucapass-icon-192.png">
+  <title>YucaPass | Pasaporte Digital de Experiencias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./yucapass.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Menú principal">
+      <a class="brand" href="#inicio" data-nav="inicio">
+        <span class="brand-symbol"><img src="./yucapass-emblem.png" alt="" class="brand-emblem"></span>
+        <span class="brand-copy"><strong>YucaPass</strong><small>Nació en Yucatán · Te lleva más allá</small></span>
+      </a>
+      <div class="sidebar-caption visitor-only">DESCUBRE YUCATÁN</div>
+      <nav class="side-nav" aria-label="Navegación de YucaPass">
+        <button class="side-link active" data-nav="inicio" data-role-nav="public"><span class="nav-icon">⌂</span><span>Inicio</span></button>
+        <button class="side-link" data-nav="explorar" data-role-nav="public"><span class="nav-icon">⌕</span><span>Explorar Yucatán</span></button>
+        <button class="side-link" data-nav="pasaporte" data-role-nav="public"><span class="nav-icon">✧</span><span>Mi pasaporte</span></button>
+        <button class="side-link" data-nav="cuenta" data-role-nav="account"><span class="nav-icon">◎</span><span>Mi cuenta</span></button>
+        <button class="side-link" data-nav="recompensas" data-role-nav="public"><span class="nav-icon">♕</span><span>Recompensas</span></button>
+        <button class="side-link" data-nav="registrar-hotel" data-role-nav="public"><span class="nav-icon">⌂</span><span>Registrar un hotel</span></button>
+        <button class="side-link" data-nav="viaje" data-role-nav="public"><span class="nav-icon">◉</span><span>Mi experiencia continua</span></button>
+        <div class="staff-nav-divider" data-role-nav="staff" hidden><span>ÁREA DE SERVICIO</span></div>
+        <button class="side-link admin-nav-link" data-nav="admin" data-role-nav="admin" hidden><span class="nav-icon">▦</span><span>Administrar plataforma</span></button>
+        <button class="side-link" data-nav="hotel" data-role-nav="hotel" hidden><span class="nav-icon">▣</span><span>Servicio del hotel</span></button>
+        <button class="side-link" data-nav="participante" data-role-nav="partner" hidden><span class="nav-icon">◇</span><span>Servicio del participante</span></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-card visitor-only">
+        <div class="sidebar-card-icon">✦</div>
+        <strong>El viaje no termina aquí.</strong>
+        <p>Descubre experiencias que mantienen viva tu conexión con Yucatán.</p>
+        <button class="sidebar-card-link" data-nav="viaje">Seguir explorando <span>→</span></button>
+      </div>
+      <div class="sidebar-footer"><span class="online-dot"></span> YucaPass · Nació en Yucatán</div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="mobile-header-controls">
+          <button class="icon-action mobile-menu-toggle" data-action="toggle-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+          <button class="icon-action mobile-back-button" data-action="go-back" aria-label="Volver a la pantalla anterior" title="Volver">←</button>
+        </div>
+        <div class="mobile-brand"><span class="brand-symbol small-symbol"><img src="./yucapass-emblem.png" alt="" class="brand-emblem"></span><strong>YucaPass</strong></div>
+        <div class="topbar-context"><span class="context-kicker" id="topbar-kicker">TU GUÍA DIGITAL</span><strong id="topbar-title">Descubre Yucatán</strong></div>
+        <button id="pwa-install-button" class="pwa-install-button" type="button" hidden>Instalar YucaPass <span aria-hidden="true">↓</span></button>
+        <div id="supabase-status" class="supabase-status staff-only" hidden data-status="checking" role="status" aria-live="polite"><span class="supabase-status-dot"></span><span><strong>Verificando conexión</strong><small>Estado del servicio</small></span><button type="button" data-action="supabase-check" aria-label="Comprobar conexión">↻</button></div>
+        <div class="topbar-actions visitor-only">
+          <label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Buscar destinos o experiencias" aria-label="Buscar destinos"></label>
+          <button class="icon-action" data-action="favorites" aria-label="Ver favoritos" title="Mis favoritos">♡</button>
+          <button class="profile-button" data-nav="cuenta" aria-label="Abrir mi cuenta"><span class="profile-avatar">V</span><span class="profile-name">Visitante</span><span class="chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <main id="view-root" class="main-content" tabindex="-1"></main>
+      <footer class="app-footer"><span>YucaPass · Nació en Yucatán. Te lleva más allá.</span><span class="visitor-only">Una iniciativa para conectar destinos, hoteles y comunidades de Yucatán.</span><span class="staff-only" hidden>Área privada · Acceso protegido.</span></footer>
+    </div>
+  </div>
+
+  <div class="mobile-menu-backdrop" data-action="close-menu" aria-hidden="true"></div>
+
+  <nav class="mobile-nav" aria-label="Navegación inferior">
+    <button class="mobile-nav-item active" data-nav="inicio" data-role-nav="public"><span>⌂</span><small>Inicio</small></button>
+    <button class="mobile-nav-item" data-nav="explorar" data-role-nav="public"><span>⌕</span><small>Explorar</small></button>
+    <button class="mobile-nav-item" data-nav="pasaporte" data-role-nav="public"><span>✧</span><small>Pasaporte</small></button>
+    <button class="mobile-nav-item" data-nav="cuenta" data-role-nav="account"><span>◎</span><small>Cuenta</small></button>
+    <button class="mobile-nav-item" data-nav="recompensas" data-role-nav="public"><span>♕</span><small>Recompensas</small></button>
+    <button class="mobile-nav-item" data-nav="registrar-hotel" data-role-nav="public"><span>⌂</span><small>Hotel</small></button>
+    <button class="mobile-nav-item" data-nav="viaje" data-role-nav="public"><span>◉</span><small>Mi viaje</small></button>
+    <button class="mobile-nav-item mobile-service-item" data-nav="admin" data-role-nav="admin" hidden><span>▦</span><small>Administrar</small></button>
+    <button class="mobile-nav-item mobile-service-item" data-nav="hotel" data-role-nav="hotel" hidden><span>▣</span><small>Hotel</small></button>
+    <button class="mobile-nav-item mobile-service-item" data-nav="participante" data-role-nav="partner" hidden><span>◇</span><small>Participante</small></button>
+    <button class="mobile-nav-item mobile-service-item" data-action="staff-logout" data-role-nav="staff" hidden><span>↪</span><small>Salir</small></button>
+  </nav>
+
+  <section class="analytics-consent" id="analytics-consent" hidden aria-label="Preferencias de medición de uso">
+    <div><strong>Ayúdanos a mejorar YucaPass</strong><p>¿Permites medir visitas y uso de forma agregada? No guardamos ubicación precisa, correos ni datos de contacto en estas métricas.</p></div>
+    <div class="analytics-consent-actions"><button class="btn btn-gold" data-action="analytics-consent-yes">Permitir métricas</button><button class="btn btn-outline" data-action="analytics-consent-no">Solo necesarias</button></div>
+  </section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modal-root" aria-hidden="true"></div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

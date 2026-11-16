@@ -1,0 +1,36 @@
+{
+  "name": "yucapass-github-flat",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "description": "YucaPass 5.0 — edición profesional, una sola fuente web/Android y preparación de publicación Google Play.",
+  "scripts": {
+    "build:web": "node prepare-web.mjs",
+    "android:add": "npm run build:web && cap add android && npm run android:prepare",
+    "android:sync": "npm run build:web && cap sync android && npm run android:prepare",
+    "android:open": "cap open android",
+    "android:debug": "npm run android:sync && cd android && ./gradlew assembleDebug",
+    "test:reservations": "node test-reservation-flow.mjs",
+    "check:supabase-config": "node test-supabase-config.mjs",
+    "test:roles": "node test-role-dashboards.mjs",
+    "test:syntax": "node test-source-syntax.mjs",
+    "test:analytics-stamps": "node test-analytics-stamps.mjs",
+    "test:auth": "node test-auth-flow.mjs",
+    "check": "npm run test:reservations && npm run check:supabase-config && npm run test:roles && npm run test:analytics-stamps && npm run test:syntax && npm run test:auth && npm run test:hotel-onboarding && npm run test:unified && npm run test:release-config && npm run test:pwa",
+    "test:hotel-onboarding": "node test-hotel-onboarding.mjs",
+    "test:unified": "node test-unified-web-android.mjs",
+    "android:prepare": "node scripts/prepare-android.mjs",
+    "android:signing": "node scripts/configure-release-signing.mjs",
+    "test:release-config": "node test-release-config.mjs",
+    "android:release": "npm run android:sync && node scripts/configure-release-signing.mjs && cd android && ./gradlew bundleRelease",
+    "test:pwa": "node test-pwa-install.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.2",
+    "@capacitor/core": "8.6.2",
+    "@capacitor/splash-screen": "8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2"
+  }
+}

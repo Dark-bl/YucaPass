@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+const read = name => readFile(new URL(`./${name}`, import.meta.url), 'utf8');
+const config = await read('supabase-config.js');
+assert.match(config, /https:\/\/razuzgaulxkknnwqadau\.supabase\.co/);
+assert.match(config, /sb_publishable_/);
+assert.doesNotMatch(config, /sb_secret_|service_role|SUPABASE_SERVICE_ROLE_KEY/);
+const client = await read('supabase-client.js');
+assert.match(client, /createClient/);
+assert.match(client, /from\('hotels'\)/);
+console.log('Supabase client config: OK (URL + publishable key; no secret key in frontend).');

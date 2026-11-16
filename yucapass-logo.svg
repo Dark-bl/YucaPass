@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="190" viewBox="0 0 780 190">
+<rect width="780" height="190" rx="24" fill="#0a232a"/>
+<g transform="translate(22 16)"><rect x="2" y="2" width="150" height="150" rx="30" fill="#142e2a" stroke="#d7ad5e" stroke-width="3"/><path d="M77 16 91 56 132 72 91 88 77 132 63 88 22 72 63 56Z" fill="none" stroke="#e6c58f" stroke-width="5"/><path d="M77 38V106M43 72H111" stroke="#f1d18d" stroke-width="3"/><path d="M48 116 77 94 106 116 77 138Z" fill="#d6aa57" opacity=".9"/><path d="M77 111 77 138" stroke="#0a232a" stroke-width="3"/></g>
+<text x="198" y="94" font-family="Georgia,serif" font-size="72" font-weight="700" fill="#e6c58f">YucaPass</text>
+<text x="202" y="132" font-family="Arial,sans-serif" font-size="20" letter-spacing="2" fill="#d3e2da">NACIÓ EN YUCATÁN. TE LLEVA MÁS ALLÁ.</text>
+</svg>

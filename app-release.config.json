@@ -1,0 +1,8 @@
+{
+  "versionCode": 50000,
+  "compileSdkVersion": 36,
+  "targetSdkVersion": 36,
+  "minSdkVersion": 24,
+  "applicationId": "mx.yucapass.turismo",
+  "displayName": "YucaPass"
+}
